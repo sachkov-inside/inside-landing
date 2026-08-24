@@ -8,8 +8,9 @@ Write agent-facing documents in English. Preserve the original language of user-
 
 - For product, copy, visual, reference or UI work, read `docs/agents/domain.md`; it routes to the
   relevant local source of truth.
-- For GitHub triage or Wayfinder operations, read `docs/agents/issue-tracker.md` and
-  `docs/agents/triage-labels.md`.
+- For GitHub issue routing, Project fields, or Wayfinder operations, read
+  `docs/agents/issue-tracker.md`.
+- For readiness-label triage, read `docs/agents/triage-labels.md`.
 
 ## Commands and completion
 
