@@ -45,3 +45,25 @@ The prototype and Astro output were compared with full-page browser screenshots.
 - A no-JavaScript browser check confirmed the six-link fallback navigation and hidden inert burger.
 
 The actual Timeweb deployment, domain rebinding, external Tribute checkout, and field Core Web Vitals remain post-push operational checks.
+
+## Craft + Levels sections (2026-08-25)
+
+Scope: new «Это не вайб-кодинг» section (`#craft`, after Pipeline) and the
+«Полезно на любом уровне» railway timeline (`#levels`, replacing Fit). Nav item
+«04 Кому подходит» renamed to «04 Уровни» in pill, overlay and no-JS nav.
+
+- Green: `npm run verify` completed with Astro Check 0/0/0 and production metadata verified.
+- Screenshots at 1440x1000, 768x1024, 393x852, and 320x568 in the deterministic `?static` state: both sections compose correctly; the desktop rail runs horizontally with the filled senior node, below 900px it collapses to a vertical rail.
+- No horizontal overflow at 320, 393, 768, or 1440 CSS pixels.
+- Browser console reported no errors or warnings.
+- Ten conversion links resolve to the Tribute URL, including the new per-section CTA links in `#craft` and `#levels`.
+- Visible page text still contains no em dash characters.
+- New hover transitions (`.craft-card`, `.level`) are disabled under reduced motion; section content is plain semantic HTML visible without JS.
+
+Update 2026-08-25 (second pass): craft card glyphs replaced with inline Lucide icons on accent discs; the levels rail reworked to a vertical timeline (central rail, alternating cards ≥900px; left rail below; ring nodes with paper halo, filled senior node). Copy revised through the owner's natural-text rules. Re-verified: `npm run verify` green, no overflow at 320/393/768/1440, dev-server screenshots checked at 393/768/1440.
+
+Update 2026-08-25 (third pass): levels reworked from the owner's SachkovLearn course reference — stages top-down along a left accent rail at every viewport, mono pill badges, outcome lines, 3 icon features per stage, «Темы этапа» panel (right column ≥900px). Reference counters (modules/lessons/projects) intentionally dropped: numbers are never invented. Verified before interruption: `npm run verify` green (Astro Check 0/0/0), production preview console clean, no overflow at 320/393/768/1440, screenshots checked at 393/768/1440.
+
+Update 2026-08-25 (pain-thread copy pass): owner's pain narrative woven through existing copy — hero sub, craft lead, pipeline perk «Живой продукт…», new FAQ 05 «У меня уже есть курсы и гайды…» (cancellation item renumbered to 06), final CTA sub («Небольшая цена подписки вместо дорогого курса»). Copy-only change, no layout or style edits.
+
+Update 2026-08-25 (author reorder): «Кто ведёт канал» moved between Levels and FAQ; nav renumbered 03 Уровни / 04 Автор in pill, overlay and no-JS nav. Section order and anchor ids unchanged otherwise.

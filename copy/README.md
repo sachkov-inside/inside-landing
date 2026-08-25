@@ -23,9 +23,10 @@ leads to the Tribute app `https://t.me/tribute/app?startapp=s13EA_pc_INSIDE`
 | 03 | Что внутри | Explain what the membership consists of: production materials, AI-first, architecture, career, practice, community. | dark bento panel + 6 artifact tiles (first iteration in prototype; awaiting owner references for rework) | iterating |
 | 04 | От проектирования до релиза | Full production cycle (not one build-series): design+architecture and AI-first first, code secondary; 4 benefits; stack chips. | light section with terminal window running the CI/CD pipeline line by line (prototype) | iterating |
 | 05 | Кто ведёт канал | Trust: real engineer behind the channel, public track record. | white card: cutout photo (`assets/author.webp`) on warm gradient + facts, stats, CTA «Написать мне», social icons | prototype |
+| 05b | Это не вайб-кодинг | Anti-hype positioning: AI writes the code, but production rests on engineering skills: clean code, review, microservice design, business tasks, priorities. | light section, H2 with «вайб-кодинг» struck through in accent, 5 skill cards with inline Lucide icons (braces / search-code / network / target / arrow-up-narrow-wide) | prototype |
 | 06 | Три направления (Архитектура / AI-агенты / Production) | What the practice covers; AI as practice, not decoration. | numbered 01/02/03 columns (prototype) or per-topic mini-artifacts | to discuss |
 | 07 | Комьюнити | Separate chat, Kirill's participation, breakdowns and streams; not mentorship. | TBD — proposals: chat message cards / stream schedule strip | to discuss |
-| 08 | Кому подходит / кому нет | Honest audience filter (already coding; not from zero, not mentorship, no job guarantee). | two soft cards: «Подходит, если ты:» (6 items, orange checks) / «Не подходит, если ты:» (3 items, muted crosses) | prototype |
+| 08 | Полезно на любом уровне | Per-grade value: начинающий / junior / middle / senior each take what their stage needs. Replaces «Кому подходит / кому нет» (owner decision 2026-08-25). | stages top-down along a left accent rail at every viewport: ring nodes on a paper halo, senior node filled; each stage = mono pill LVL 01–04, title, «кто ты сейчас» line, accent outcome line, 3 features with inline Lucide icons + «Темы этапа» panel (right column ≥900px, below on mobile) | prototype |
 | 09 | FAQ | Objection handling: language fit, not-a-course, time, answers, cancellation. | soft accordion cards (mono index, plus/minus), `?faq=open` debug param | prototype |
 | 10 | Формат и доступ | Closing CTA; price and checkout live on the Tribute page, not on the landing. | dark panel «Заходи в Sachkov Inside» + clay robot + big CTA | prototype |
 | 11 | Footer | Brand, social links (TG/YT/GitHub), copyright. | mono row, stacked on mobile, safe-area bottom inset | prototype |
@@ -39,6 +40,80 @@ leads to the Tribute app `https://t.me/tribute/app?startapp=s13EA_pc_INSIDE`
 ## Notes per block
 
 _Discussion decisions land here as we go, newest first._
+
+### Author block moved before FAQ (2026-08-25)
+
+Owner request: «Кто ведёт канал» now sits between Levels and FAQ (was between
+Craft and Levels). Page order: Hero → Что внутри → Pipeline → Craft → Levels
+→ Author → FAQ → Final CTA. Nav renumbered accordingly in the pill, overlay
+and no-JS nav: 03 Уровни / 04 Автор / 05 FAQ.
+
+### Pain thread across the landing (2026-08-25)
+
+Owner request: the landing must say which pain the workshop solves, woven
+through the whole page. Pains from the owner's voice notes: tech moves too
+fast and AI is already applied everywhere; full courses are expensive; design
+and production-development skills are what's missing; plain guides (a CRUD, a
+single line of code) lose relevance; the membership is for those who want to
+keep growing: useful materials for a small subscription price. Threaded into
+existing copy, no new section: hero sub («Технологии меняются каждый месяц.
+Разбираем те, что востребованы сегодня, и практики, которые актуальны всегда:
+…» — H1 untouched; owner picked this variant from four: the first draft
+«гайды устаревают ещё быстрее… то, что остаётся» read as evergreen-fundamentals
+only and hid the current-tech side),
+craft lead («обычные гайды про синтаксис теряют смысл»), pipeline perk
+«Живой продукт, не записанный курс» («Полноценный курс стоит дорого и
+устаревает к моменту выхода»), new FAQ 05 «У меня уже есть курсы и гайды.
+Чем это отличается?» (old cancellation item renumbered to 06), final CTA sub
+(«Небольшая цена подписки вместо дорогого курса»). Copy follows the owner's
+natural-text rules; no em dashes. The price itself stays off-site on the
+Tribute page; only the relative framing «небольшая цена» is used. Pending
+owner pass.
+
+### Levels rework from the owner's course reference (2026-08-25, third pass)
+
+Owner sent his SachkovLearn .NET-course landing as a reference (dark stage
+sections) and asked to adapt it to Inside, naming concrete technologies
+(auth, microservices, brokers). Adapted to light A2: stages run top-down
+along a left accent rail at every viewport; each stage = mono pill badge
+(LVL 01 · Старт … LVL 04 · Инженер), title, «кто ты сейчас» line, accent
+outcome line with «→», 3 features with inline Lucide icons, and a «Темы
+этапа» panel listing concrete topics (микросервисы, PostgreSQL и Redis,
+Kafka, авторизация и аутентификация, system design). The reference's counters
+(«28 модулей · 93 урока · 5 проектов») were dropped: numbers are never
+invented. Replaces the alternating zigzag timeline from the second pass.
+Copy passed through natural-text; pending owner pass.
+
+### 05b «Это не вайб-кодинг» + 08 «Полезно на любом уровне» (2026-08-25)
+
+Owner request: a section against вайб-кодинг (clean code, review, microservice
+design, business tasks, priorities) and a railway/timeline of per-grade value
+(начинающий / junior / middle / senior). Owner decisions: the timeline REPLACES
+«Кому это подходит» (Fit removed; the honest-filter role partially stays with
+FAQ); «Это не вайб-кодинг» sits after Pipeline, before Author. Craft: H2 with
+«вайб-кодинг» struck through by an accent stroke, lead, 5 light cards with
+inline Lucide icons on accent-tinted discs (braces / search-code / network /
+target / arrow-up-narrow-wide); owner rejected the first mono-glyph variant
+({} ± ◈ ◎ ↑) and pointed to developer-icons as a style reference — that set is
+tech logos only and does not cover these five concepts, so Lucide (ISC) paths
+are inlined instead. 6-col grid (3+2) on desktop, 2 cols ≥700px, 1 col mobile.
+Levels: H2 «Полезно на любом уровне», rail with gradient faint→accent and 4
+nodes (senior node filled), cards LVL 01–04 with a «кто ты сейчас» line and 3
+takeaways. Owner pass 2026-08-25 (second): horizontal 4-column rail read too
+narrow when the window is slightly narrowed — reworked to a vertical timeline:
+central rail with cards alternating left/right ≥900px, left rail below; nodes
+are white rings with a 3px accent border on a paper halo that cuts the line
+(senior node filled with an accent outer ring). Copy passed through the
+natural-text rules (owner's personal skill): concrete lead («что строить, как
+проверять, когда выпускать»), «naming» → «понятные имена», microservice card
+names data/protocols/failure behavior explicitly, no em dashes. Owner pass on
+LVL 01: «Первые навыки проектирования» → «Первые навыки production-разработки»
+(он не учит писать код с нуля); «Практика на настоящих задачах…» → «Все примеры
+из живых production-проектов» (на платформе нет заданий для выполнения, но все
+примеры показываются на практике). Nav item «04 Кому подходит»
+renamed to «04 Уровни» (#levels) in pill, overlay and no-JS nav. Section ids:
+#craft, #levels. Copy drafted by agent from the owner's voice notes, pending
+owner pass. Note: owner uses the spelling «вайб-кодинг».
 
 ### Final CTA polish + Tribute link (2026-08-18)
 
