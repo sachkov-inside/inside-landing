@@ -89,9 +89,11 @@ not dark hacker neon, not AI-slop stock gradients.
 ## Page structure (confirmed)
 
 Hero → Что внутри (dark bento, 6 clay tiles) → От проектирования до релиза
-(terminal + 4 perks + stack chips) → Кто ведёт канал (author card) → Кому это
-подходит (fit cards) → Вопросы и ответы (accordion) → Заходи в Sachkov Inside
-(dark final CTA) → footer. Conversion: all «Получить доступ» →
+(terminal + 4 perks + stack chips) → Это не вайб-кодинг (5 skill cards,
+Lucide icons) → Полезно на любом уровне (4 stages on a left accent rail,
+«Темы этапа» panels) → Кто ведёт канал (author card) → Вопросы и ответы
+(accordion, 6 items) → Заходи в Sachkov Inside (dark final CTA) → footer.
+Conversion: all «Получить доступ» →
 `https://t.me/tribute/app?startapp=s13EA_pc_INSIDE` (new tab); price is not shown on the landing.
 
 ## Open questions
@@ -114,3 +116,5 @@ Hero → Что внутри (dark bento, 6 clay tiles) → От проекти�
 | 2026-08-18 | Final CTA panel (robot, «Заходи в Sachkov Inside») + real footer + meta/OG/favicon | closing the design phase |
 | 2026-08-18 | Trust line removed from final CTA; Tribute link → /s/13EA; stack chips made solid/legible on light bg | owner polish pass |
 | 2026-08-20 | Hero headline changed to «Fullstack-мастерская» | owner Agentation feedback |
+| 2026-08-25 | «Это не вайб-кодинг» section after Pipeline; Fit replaced by «Полезно на любом уровне» stage rail (owner's course reference); pain thread woven through hero/craft/pipeline/FAQ/final CTA copy | owner requests |
+| 2026-08-25 | Author block moved to just before FAQ; nav renumbered 03 Уровни / 04 Автор | owner request |
