@@ -14,10 +14,13 @@ The collection lives in `references/`: cards in `references/items/`, assets in `
 2. **Pick the name.** Next `NNN` number from `references/items/` plus a short lowercase slug naming the essence (`003-linear-hero`).
 
 3. **Gather material**, per input type:
-   - **Link:** fetch the page with FetchURL. If the visual is not recoverable from the markup (JS-heavy page), screenshot it with headless Chrome — available on this machine:
-     `"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --screenshot=<path> --window-size=1440,2000 --hide-scrollbars <url>`
-     Capture both desktop (1440px) and mobile (393px) widths: `NNN-slug-desktop.png`, `NNN-slug-mobile.png`, plus extra shots for key sections. Save to `references/assets/`, then read them with ReadMediaFile. Use playwright/shot-scraper instead if installed; ask before installing anything.
-   - **Screenshots:** copy the files into `references/assets/NNN-slug-*.png` and read each with ReadMediaFile.
+   - **Link:** use the runtime's available browser or page-fetch capability. Prefer the repository's
+     managed `playwright-cli` skill for repeatable desktop (1440px) and mobile (393px) screenshots.
+     Save `NNN-slug-desktop.png`, `NNN-slug-mobile.png`, and any focused section captures in
+     `references/assets/`. Inspect saved images with the runtime's available image viewer. Ask
+     before installing browser tooling or dependencies.
+   - **Screenshots:** copy the files into `references/assets/NNN-slug-*.png` and inspect every image
+     with the runtime's available image viewer.
    - **Markdown / prompt file:** copy into `references/assets/` under the same `NNN-slug` prefix.
 4. **Write the card** `references/items/NNN-slug.md` from the template in `references/README.md`, including the playbook fields: the reference's function, the one principle to take, what must not be copied, and license constraints. The analysis must be concrete: hex colors where visible, font names or precise descriptions, grid, density, named techniques. Done means every template section is filled from what was actually seen. "Takeaways for Inside" is a hypothesis weighed against the product character in `product/README.md`.
 5. **Tag** from the taxonomy in `references/README.md`. A new tag is allowed only when no existing one covers the trait — then add it to the taxonomy in the same edit.
