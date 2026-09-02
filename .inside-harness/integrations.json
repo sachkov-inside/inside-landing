@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "integrations": [
+    {
+      "path": ".codex/config.toml",
+      "sha256": "3f5afab6695ccb7c89e62dada4d7590e3dcc4b3f68231fe206a975ff24e7c71b",
+      "runtimes": [
+        "codex"
+      ],
+      "verification": "npm exec --prefix app -- agentation-mcp --help",
+      "secretEnvironmentVariables": []
+    }
+  ]
+}

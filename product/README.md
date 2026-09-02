@@ -1,8 +1,8 @@
 # Product: Sachkov Inside
 
-Condensed product description for landing and visual-direction work.
-Canonical source: `/Users/dev/Work/sachkov-inside/product/README.md` (master brief,
-in Russian). This file is a working digest — on conflict, the source wins.
+Repository-owned product contract for landing and visual-direction work. This file is canonical
+for the claims and boundaries used by this repository; unresolved facts stay explicit here rather
+than depending on another checkout.
 
 ## Definition
 

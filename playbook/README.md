@@ -1,76 +1,55 @@
 # Landing playbook
 
-The process this project follows to build the landing. Source research:
-[`handoff-new-landing-playbook-2026-08-15.md`](handoff-new-landing-playbook-2026-08-15.md)
-(verbatim handoff, in Russian — kept as the original evidence; this README is the
-working version, adapted to this repo).
+This is the current delivery contract for the production landing. The original discovery handoff
+is retained as historical evidence in
+[`handoff-new-landing-playbook-2026-08-15.md`](handoff-new-landing-playbook-2026-08-15.md); it is not
+current task routing.
 
-Core rule: one pass must not invent product, proof, structure, copy, visual
-language, and frontend at once. Each layer builds on the confirmed previous one.
+Current stage: **production maintenance**. Product, conversion event, visual direction, and the
+Astro implementation exist. Changes preserve confirmed authority unless the owner explicitly
+reopens it.
 
-## Pipeline
+## Authority
 
-```text
-facts & constraints
-→ product contract        (product/README.md)
-→ copy & conversion narrative  (copy/README.md — not created yet)
-→ 6–10 analysed references     (references/)
-→ 3–5 independent visual directions
-→ owner chooses one
-→ DESIGN.md (visual authority)
-→ single production writer
-→ browser evidence
-→ bounded review
-→ production metrics
-```
+| Concern | Current source |
+|---|---|
+| Product claims, audience, and scope | [`product/README.md`](../product/README.md) |
+| Visible copy and block intent | [`copy/README.md`](../copy/README.md) |
+| Visual system, composition, motion, and QA states | [`visual/README.md`](../visual/README.md) |
+| Reference cards and local evidence | [`references/README.md`](../references/README.md) |
+| Application implementation rules | [`CODING_STANDARDS.md`](../CODING_STANDARDS.md) |
+| Reproducible browser acceptance | [`app/QA.md`](../app/QA.md) |
 
-Current stage: **discovery — product contract fixed, collecting references**.
+Unknown claims, prices, testimonials, screenshots, and support terms remain explicit; agents never
+invent them. A durable product or visual change updates its owning source in the same change.
 
-## Owner checkpoints
+## Change flow
 
-1. **Checkpoint 1 — product contract + conversion event.** Largely covered by
-   `product/README.md`; the single conversion event and final promise are still
-   open (payment provider and price are undecided in the master brief).
-2. **Checkpoint 2 — visual direction.** Owner picks one of 3–5 independently
-   produced directions, or rejects all. No production code before this.
+1. Classify the request against the authority table and read only the owning documents.
+2. Preserve the existing direction for ordinary refinements. If the request changes product truth,
+   conversion, page structure, or the visual system, make that decision explicit before coding.
+3. Implement in the production Astro application. Prototypes and reference assets are evidence,
+   never runtime dependencies.
+4. Run `npm run verify --prefix app` and the browser acceptance matrix in `app/QA.md` in proportion
+   to the changed surface.
+5. Record durable rules in their authority and attach transient screenshots/results to the issue or
+   pull request. Do not turn `app/QA.md` into a chronological review ledger.
 
-## Phase notes for this repo
+## Owner gates
 
-- **Facts:** `product/README.md` is the digest; the master brief at
-  `/Users/dev/Work/sachkov-inside/product/README.md` is the source of truth.
-  Claims, prices, testimonials, screenshots, and support terms are never
-  invented — unknowns are marked `TBD`/`hypothesis`.
-- **References:** 6–10 analysed references across three classes — how they sell
-  (structure, offer, proof), how they look, how they phrase. Each reference gets
-  a function (`structure`, `typography`, `product presentation`, `motion`,
-  `proof`, `mobile behavior`). Live sites rot: the local pack in `references/`
-  is the evidence. Cloning one site wholesale is out of scope.
-- **Visual directions:** 3–5 independent variants on the same product contract
-  and copy, compared side by side in identical desktop/mobile frames; scoped to
-  nav, desktop hero, mobile first screen, CTAs, first proof block, one signature
-  section, reduced-motion state. Decisions then land in `visual/README.md` and
-  finally in `DESIGN.md` as the visual authority.
-- **Stack:** standalone static-first site (working default from the playbook:
-  Astro + TypeScript, semantic HTML/CSS, JS only where real interactivity lives).
-  No animation/WebGL libraries without proven product need.
-- **Implementation:** one production writer; other agents stay read-only or work
-  in separate prototype branches. Build top-down along the conversion path:
-  static semantic baseline → responsive → accessibility → justified motion.
-- **Browser QA:** screenshots plus DOM/a11y snapshot, console/network, real
-  interactions. Viewports: 393x852, 768x1024, 1440x1000, 320px stress test.
-- **Review:** one merged read-only critique → one fix batch → one confirmation
-  pass. No endless "make it prettier" loops.
-- **Quality gates before owner review:** confirmed claims and real proof,
-  working conversion event end-to-end, content visible without JS and before
-  animation triggers, reduced-motion shows a complete composition, no dead-end
-  CTAs, keyboard/contrast checked, green build, browser evidence attached,
-  production p75 targets: LCP ≤ 2.5 s, INP ≤ 200 ms, CLS ≤ 0.1.
-- **Publish:** merge/release/publish stays a separate owner decision.
+Owner approval is required to replace the confirmed visual direction, change product claims or the
+conversion destination, publish/deploy, or merge. Ordinary implementation and QA inside an already
+approved direction do not reopen discovery.
 
-## Skill availability note
+## Definition of Done for UI changes
 
-The handoff recommends a skill route (`start`, `grill-with-docs`,
-`frontend-design`, `impeccable`, `web-design-guidelines`, `playwright`, …).
-Of those, only `grill-with-docs` exists in this repo's `.agents/skills/`.
-Where a named skill is missing, the agent performs that step directly and says
-so, instead of silently skipping it.
+- confirmed claims and no invented proof;
+- every visible conversion action reaches the configured destination without dead ends;
+- semantic content remains useful without JavaScript;
+- keyboard, focus, contrast, responsive layouts, and reduced motion are checked;
+- deterministic QA states still represent interactive states;
+- no console errors or horizontal overflow at the required viewports;
+- `npm run verify --prefix app` passes and any untested boundary is stated in the handoff.
+
+Production Core Web Vitals are measured from deployed traffic. The application targets LCP ≤ 2.5
+s, INP ≤ 200 ms, and CLS ≤ 0.1, but local screenshots do not claim field performance.
